@@ -6,7 +6,7 @@
 6. Paste the files you want to hide inside the folder named "Vault" that was created when you executed the batch;
 7. Execute the batch again to hide the "Vault" folder;
 8. If you want to see your stuff again execute the batch, write your password and the folder will appear again.
-9. You can run a batch-to-exe to make the code not editable/readable.
+9. You can run a bat-to-exe converter to make the code not editable/readable.
 
 WARNING: BEFORE DELETING ANY FOLDER MAKE SURE YOU TOOK EVERYTHING INSIDE OF IT! NO PROBLEM IF YOU DELETE THE BATCH,
 ALL YOU HAVE TO DO IS PLACE A NEW ONE INSIDE THE FOLDER THAT YOUR OLD BATCH WAS TO RECLAIM YOUR STUFF.
