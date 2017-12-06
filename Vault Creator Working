@@ -215,12 +215,19 @@ echo.
 echo.
 echo.
 echo.
-set/p "cho=>"
-if %cho%==1 goto LOCK
-if %cho%==2 goto END
-if %cho%==3 goto END
-echo Invalid choice.
-goto CONFIRM
+
+set /p whatapp=
+
+if %whatapp%==1 (
+    goto LOCK
+) else if %whatapp%==2 (
+    goto End
+	) else if %whatapp%==3 (
+    goto End
+) else (
+    goto ERROU
+)
+
 
 
 :type
@@ -234,6 +241,49 @@ if "%letter%"=="" echo.&goto :EOF
 set /a num+=1
 goto :type
 
+:ERROU
+set lines=1
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+set "line1=Error..."
+for /f %%a in ('"prompt $H&for %%b in (1) do rem"') do set "BS=%%a"
+
+for /L %%a in (1,1,%lines%) do set num=0&set "line=!line%%a!"&call :type
+
+ping 1.1.1.1 -n 1 -w 1500>nul
+goto CONFIRM
+
+:type
+set "letter=!line:~%num%,1!"
+set "delay=%random%%random%%random%%random%%random%%random%%random%"
+set "delay=%delay:~-1%"
+if not "%letter%"=="" set /p "=a%bs%%letter%" <nul
+
+for /L %%b in (1,10,%delay%) do rem
+if "%letter%"=="" echo.&goto :EOF
+set /a num+=1
+goto :type
 
 
 :LOCK
@@ -244,6 +294,29 @@ goto CLOSED
 
 
 :CLOSED
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
 set lines=1
 set "line1=Vault Locked..."
 
